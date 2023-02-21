@@ -1,0 +1,17 @@
+
+import re
+
+
+def is_float_literal(s):
+    pattern = r'^[-+]?\d*\.\d*([eE][-+]?\d+)?[fFlL]?$'
+    return bool(re.match(pattern, s))
+
+# Example usage:
+print(is_float_literal('15.75L'))    # True
+print(is_float_literal('1.575E1'))   # True
+print(is_float_literal('1575e-2'))   # True
+print(is_float_literal('-2.5e-3F'))  # True
+print(is_float_literal('25E-4'))     # True
+print(is_float_literal('4.'))        # True
+print(is_float_literal('3.2.1'))     # False
+print(is_float_literal('0x2.4p4'))   # False

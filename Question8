@@ -1,0 +1,12 @@
+import re
+
+
+def is_valid_email_address(email):
+    # Regular expression to match a valid email address
+    email_pattern = r'^[a-zA-Z0-9#%!$\'&+*\/=?^`{|}~-]+(?:\.[a-zA-Z0-9#%!$\'&+*\/=?^`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$'
+
+    # Check if the input string matches the email pattern
+    if re.match(email_pattern, email):
+        return True
+    else:
+        return False
